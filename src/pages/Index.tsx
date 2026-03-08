@@ -24,7 +24,7 @@ const Index = () => {
         </h1>
         <p className="text-muted-foreground text-base md:text-lg mb-1">天地之道的流轉 · 卦象中的智慧</p>
         <p className="text-muted-foreground text-sm">陰陽變化的訊息 · 時運與格局的洞察 · 萬物運行的規律</p>
-        <p className="text-primary text-xs mt-3 tracking-widest">福星何大師</p>
+        <p className="text-primary text-xs mt-3 tracking-widest">福青施老師</p>
       </header>
 
       {/* Question input */}
