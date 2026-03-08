@@ -30,7 +30,7 @@ export function generateReport(question: string, hexSet: HexagramSet): string {
 >
 > **本卦：** ${main.fullName}　｜　**變卦：** ${changed.fullName}
 >
-> **解析者：** 福星何大師　｜　**日期：** ${new Date().toLocaleDateString('zh-TW')}
+> **解析者：** 福青施老師　｜　**日期：** ${new Date().toLocaleDateString('zh-TW')}
 
 ---
 
