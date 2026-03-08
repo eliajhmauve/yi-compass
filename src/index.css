@@ -2,95 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 20 12% 7%;
+    --foreground: 40 25% 90%;
+    --card: 20 12% 11%;
+    --card-foreground: 40 25% 90%;
+    --popover: 20 12% 11%;
+    --popover-foreground: 40 25% 90%;
+    --primary: 0 75% 48%;
+    --primary-foreground: 40 25% 95%;
+    --secondary: 160 35% 28%;
+    --secondary-foreground: 40 25% 95%;
+    --muted: 20 10% 16%;
+    --muted-foreground: 30 15% 55%;
+    --accent: 42 85% 55%;
+    --accent-foreground: 20 12% 7%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 25% 95%;
+    --border: 35 20% 22%;
+    --input: 20 12% 15%;
+    --ring: 0 75% 48%;
+    --radius: 0.25rem;
+    --sidebar-background: 20 12% 9%;
+    --sidebar-foreground: 40 25% 90%;
+    --sidebar-primary: 0 75% 48%;
+    --sidebar-primary-foreground: 40 25% 95%;
+    --sidebar-accent: 20 10% 16%;
+    --sidebar-accent-foreground: 40 25% 90%;
+    --sidebar-border: 35 20% 22%;
+    --sidebar-ring: 0 75% 48%;
   }
 }
 
@@ -98,8 +39,68 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
+    font-family: 'Noto Serif TC', serif;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .brutalist-card {
+    @apply border-[3px] border-foreground/30 bg-card p-4 md:p-6;
+    box-shadow: 6px 6px 0px hsl(var(--primary) / 0.3);
+  }
+  .brutalist-card-gold {
+    @apply border-[3px] border-accent bg-card p-4 md:p-6;
+    box-shadow: 6px 6px 0px hsl(var(--accent) / 0.3);
+  }
+  .btn-oracle {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-bold border-[3px] border-accent bg-primary text-primary-foreground transition-all duration-200;
+    box-shadow: 4px 4px 0px hsl(var(--accent));
+  }
+  .btn-oracle:hover {
+    box-shadow: 2px 2px 0px hsl(var(--accent));
+    transform: translate(2px, 2px);
+  }
+  .btn-oracle:active {
+    box-shadow: 0px 0px 0px hsl(var(--accent));
+    transform: translate(4px, 4px);
+  }
+  .btn-secondary-oracle {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-bold border-[3px] border-secondary bg-muted text-foreground transition-all duration-200;
+    box-shadow: 4px 4px 0px hsl(var(--secondary));
+  }
+  .btn-secondary-oracle:hover {
+    box-shadow: 2px 2px 0px hsl(var(--secondary));
+    transform: translate(2px, 2px);
+  }
+  .hex-line {
+    @apply h-[6px] md:h-2 rounded-sm;
+  }
+  .hex-line--yang {
+    @apply bg-accent;
+  }
+  .hex-line--yin {
+    @apply bg-accent;
+  }
+  .section-title {
+    @apply text-xl md:text-2xl font-bold text-accent border-b-[3px] border-primary pb-2 mb-4;
+  }
+  .page-container {
+    @apply min-h-screen bg-background px-4 py-6 md:px-8 md:py-10;
+  }
+}
+
+@keyframes taichi-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 8px hsl(var(--accent) / 0.4)); }
+  50% { filter: drop-shadow(0 0 20px hsl(var(--accent) / 0.8)); }
 }
